@@ -1,0 +1,22 @@
+<body>
+    <main>
+        <h1>Bienvenido al Chat en Tiempo Real</h1>
+        <div class="chat-container">
+            <div class="messages">
+              <div *ngFor="let message of messages" class="message">
+                <strong>{{ message.user }}:</strong> {{ message.text }}
+              </div>
+            </div>
+            <div class="input-container">
+              <input
+                type="text"
+                [(ngModel)]="newMessage"
+                placeholder="Escribe un mensaje"
+                (keyup.enter)="sendMessage()"
+              />
+              <button (click)="sendMessage()">Enviar</button>
+            </div>
+          </div>
+          
+    </main>
+</body>
